@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Restaurant Reservation | Book Your Table</title>
+    <link rel="stylesheet" href="tcprit.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-part logo-sash">Sash</span>
+                <span class="logo-part logo-mandi">Mandi</span>
+                <span class="logo-part logo-darbar">Darbar</span>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Our Restaurant</h1>
+            <p>Experience the finest dining with exceptional flavors and warm hospitality</p>
+            <a href="#reservation" class="btn-hero">Book Your Table</a>
+        </div>
+    </section>
+
+    <!-- Registration/Reservation Section -->
+    <section id="reservation" class="reservation-section">
+        <div class="container">
+            <div class="reservation-header">
+                <h2>Make a Reservation</h2>
+                <p>Book your table now and enjoy a memorable dining experience</p>
+            </div>
+
+            <div class="reservation-wrapper">
+                <div class="reservation-info">
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Opening Hours</h3>
+                        <p>Monday - Friday: 11:00 AM - 10:00 PM</p>
+                        <p>Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>1st floor, tavakkal batteries,
+                        <p>Main Road, near Govt. Hospital, Yellandu, Telangana 507123</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Contact</h3>
+                        <p>+91 9652718363</p>
+                        <p>sashmandidarbar@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="reservation-form-container">
+                    <form id="reservationForm" class="reservation-form">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Full Name *
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address *
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile">
+                                <i class="fas fa-phone-alt"></i>
+                                Mobile Number *
+                            </label>
+                            <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+                            <div class="error-message" id="mobileError"></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Date *
+                                </label>
+                                <input type="date" id="date" name="date" required>
+                                <div class="error-message" id="dateError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time">
+                                    <i class="fas fa-clock"></i>
+                                    Time *
+                                </label>
+                                <input type="time" id="time" name="time" required>
+                                <div class="error-message" id="timeError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">
+                                <i class="fas fa-users"></i>
+                                Number of Guests *
+                            </label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select number of guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7+ Guests</option>
+                            </select>
+                            <div class="error-message" id="guestsError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialRequests">
+                                <i class="fas fa-pen-alt"></i>
+                                Special Requests
+                            </label>
+                            <textarea id="specialRequests" name="specialRequests" rows="4"
+                                placeholder="Any dietary restrictions, allergies, or special occasions?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-check-circle"></i>
+                            Make Reservation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Reservation Confirmed!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for choosing our restaurant!</p>
+                <div id="reservationDetails" class="reservation-details"></div>
+                <p class="confirmation-message">We have sent a confirmation email with your reservation details.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-close" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We serve the finest cuisine with passion and dedication to make every dining experience memorable.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <a href="index.html" class="btn">Home</a>
+                    <li><a href="#reservation">Reservation</a></li>
+                    <a href="index.html#menu" class="menu-link">
+                        <i class="fas fa-utensils"></i> Menu
+                    </a>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/sash_mandi__darbar?igsh=MTFrdHg5NjRtcjdpMg==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="tcript.js"></script>
+</body>
+
+</html>

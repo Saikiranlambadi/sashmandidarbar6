@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Environment Variables (IMPORTANT: Never upload .env files containing passwords)
+.env
+
+# MacOS system files
+.DS_Store
+
+# Netlify dev folder
+.netlify/

@@ -1,0 +1,204 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sash Mandi Darbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span class="logo-part logo-sash">Sash</span>
+                    <span class="logo-part logo-mandi">Mandi</span>
+                    <span class="logo-part logo-darbar">Darbar</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Experience Culinary Excellence</h1>
+                <p>Discover our carefully crafted menu featuring the finest ingredients and innovative flavors</p>
+                <a href="#menu" class="btn">View Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">OUR STORY</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Started in 2021, Sash Mandi Darbar has been serving exceptional cuisine in a warm and inviting
+                        atmosphere. Our chef brings over 10 years of international experience to create dishes that
+                        blend traditional techniques with modern innovation.</p>
+                    <p>We source our ingredients from local farmers and producers who share our commitment to quality
+                        and sustainability. Every dish tells a story of passion, craftsmanship, and respect for the
+                        ingredients.</p>
+
+                </div>
+
+                <div class="about-image">
+                    <div>
+                        <!-- Slideshow container -->
+                        <div class="slideshow-container">
+                            <!-- Images will be added dynamically via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-items">
+                <!-- Appetizers -->
+                <div class="menu-item">
+                    <img src="chicken mandi.jpg" alt="Chicken Mandi">
+                    <div class="menu-item-content">
+                        <h3>Chicken Mandi</h3>
+                        <p class="menu-item-price">₹260</p>
+                        <p>Groovin with my crispy chicken squad!</p>
+                    </div>
+                </div>
+
+                <!-- New Item 1 -->
+                <div class="menu-item">
+                    <img src="motton mandi.jpg" alt="Mutton Mandi">
+                    <div class="menu-item-content">
+                        <h3>Mutton Mandi</h3>
+                        <p class="menu-item-price">₹350</p>
+                        <p>Tender mutton slow-cooked to perfection</p>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="menu-item">
+                    <img src="fish-mandi-this-recipe.jpg" alt="Fish Mandi">
+                    <div class="menu-item-content">
+                        <h3>Fish Mandi</h3>
+                        <p class="menu-item-price">₹500</p>
+                        <p>Savoring the flavors of the sea</p>
+                    </div>
+                </div>
+
+                <!-- New Item 2 -->
+                <div class="menu-item">
+                    <img src="Crispy_paneer_Mandi_.jpeg" alt="_paneer Mandi">
+                    <div class="menu-item-content">
+                        <h3>_paneer Mandi</h3>
+                        <p class="menu-item-price">₹450</p>
+                        <p>Juicy prawns with aromatic spices</p>
+                    </div>
+                </div>
+
+                <!-- Chicken Biryani -->
+                <div class="menu-item">
+                    <img src="IMG-20250302-WA0006.jpg" alt="Chicken Biryani">
+                    <div class="menu-item-content">
+                        <h3>Chicken Biryani</h3>
+                        <p class="menu-item-price">₹140</p>
+                        <p>Every grain tells a spicy story</p>
+                    </div>
+                </div>
+
+                <!-- New Item 3 -->
+                <div class="menu-item">
+                    <img src="kuda biryani.jpg" alt="kunda Biryani">
+                    <div class="menu-item-content">
+                        <h3>kunda Biryani</h3>
+                        <p class="menu-item-price">₹120</p>
+                        <p>A garden of flavors in every bite</p>
+                    </div> <!-- ends menu-item-content -->
+                </div> <!-- ends menu-item (Kunda Biryani) -->
+            </div> <!-- ends menu-items grid container -->
+
+            <div class="btn-container" style="text-align: center; margin: 40px auto; width: 100%;">
+                <a href="#" class="btn" id="menuBtn" style="font-size: 1.2rem; padding: 15px 30px;">VIEW FULL MENU</a>
+            </div>
+
+            <!-- The Modal -->
+            <div id="menuModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>₹500
+                    <img src="menu.jpeg" alt="Full Menu" class="menu-image">
+                </div>
+            </div>
+
+            <script src="./js/Tcript.js"></script>
+
+        </div> <!-- End container -->
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-track">
+                    <div class="gallery-item">
+                        <img src="grill chicken.jpg" alt="Restaurant dish">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="panner tikka.jpg" alt="Restaurant bar">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="shawarma.jpg" alt="Wine selection">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="basanthi.jpg" alt="Chef preparing food">
+                    </div>
+                    <!-- Duplicate items for seamless looping -->
+                    <div class="gallery-item">
+                        <img src="CHICKEN LOLLY POP.jpg" alt="Restaurant dish">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="saad.jpg" alt="Restaurant bar">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container" style="text-align: center; margin: 40px auto; padding-bottom: 40px;">
+        <a href="registretion.html" class="btn" style="font-size: 1.2rem; padding: 15px 30px;">RESERVE A TABLE </a>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+
+            <div class="logo">
+                <span class="logo-part logo-sash">Sash</span>
+                <span class="logo-part logo-mandi">Mandi</span>
+                <span class="logo-part logo-darbar">Darbar</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 SASH MANDI DARBAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontaw esome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
