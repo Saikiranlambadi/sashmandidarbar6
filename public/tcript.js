@@ -289,9 +289,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Log to console (for testing)
                 console.log('Reservation Details:', reservationDetails);
                 
-                // Point to local node server if running on Live Server, else use Netlify Functions
-                const isLocalLiveServer = window.location.port === '5500' || window.location.port === '5501';
-                const apiUrl = isLocalLiveServer ? 'http://localhost:5000/api/submit' : '/.netlify/functions/submit';
+                // Use local Express API when running locally (any port), else use Netlify Functions
+                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                const apiUrl = isLocal ? '/api/submit' : '/.netlify/functions/submit';
                 
                 // Send to backend API
                 fetch(apiUrl, {

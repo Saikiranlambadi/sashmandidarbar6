@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// API endpoint
+// API
 app.post('/api/submit', async (req, res) => {
     try {
         const userData = req.body;
@@ -25,30 +25,43 @@ app.post('/api/submit', async (req, res) => {
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: process.env.OWNER_EMAIL,
-            subject: 'New User Registration',
-            html: `<h2>New User Details:</h2>
-                   <p>Name: ${userData.name}</p>
-                   <p>Email: ${userData.email}</p>
-                   <p>Phone: ${userData.phone || 'Not provided'}</p>
-                   <p>Message: ${userData.message || 'None'}</p>`
+            subject: 'New Table Reservation - Sash Mandi Darbar',
+            html: `
+                <h2>New Reservation Request</h2>
+                <p><strong>Name:</strong> ${userData.name}</p>
+                <p><strong>Email:</strong> ${userData.email}</p>
+                <p><strong>Phone:</strong> ${userData.phone}</p>
+                <p><strong>Details:</strong> ${userData.message}</p>
+            `
         });
 
-        res.json({ success: true, message: 'Submitted successfully!' });
+        res.json({ success: true });
 
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: error.message });
+        res.status(500).json({ success: false });
     }
 });
 
-// Serve static frontend
-app.use(express.static(__dirname));
+// ✅ Serve static files from ROOT
+app.use(express.static(path.join(__dirname)));
 
-// ✅ FIXED fallback (no '*' or '/*')
-app.use((req, res) => {
+// ✅ Serve index.html on root
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// ❌ DO NOT use '*' or '/*'
+
 // Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+(async () => {
+    try {
+        const server = await app.listen(PORT);
+        console.log(`Server running on http://localhost:${PORT}`);
+    } catch (error) {
+        console.error('Failed to start server:', error);
+        process.exit(1);
+    }
+})();

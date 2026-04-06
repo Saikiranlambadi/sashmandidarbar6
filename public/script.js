@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (slideshowContainer) {
         // Array of image paths (replace with your actual image paths)
         const images = [
-            "IMG_20250228_111016.jPg",
-            "IMG_20250227_212527.jpg",
-            "IMG_9968.jpg",
-            "design.jpeg"
+            "/assets/IMG_20250228_111016.jPg",
+            "/assets/IMG_20250227_212527.jpg",
+            "/assets/IMG_9968.jpg",
+            "/assets/design.jpeg"
         ];
 
         let currentIndex = 0;
